@@ -1,0 +1,12 @@
+/Users/scorpio/Desktop/Reactivities/Domain/bin/Debug/net8.0/Domain.deps.json
+/Users/scorpio/Desktop/Reactivities/Domain/bin/Debug/net8.0/Domain.dll
+/Users/scorpio/Desktop/Reactivities/Domain/bin/Debug/net8.0/Domain.pdb
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.dll
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/refint/Domain.dll
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/Domain.pdb
+/Users/scorpio/Desktop/Reactivities/Domain/obj/Debug/net8.0/ref/Domain.dll
