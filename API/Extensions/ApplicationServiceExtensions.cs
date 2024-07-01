@@ -17,7 +17,7 @@ namespace API.Extensions
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddCors((opt) => {
+            services.AddCors(opt => {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
