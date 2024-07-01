@@ -1,10 +1,11 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Container } from "semantic-ui-react";
 import { Activity } from "../models/activity";
 import NavBar from "./NavBar";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
 import { v4 as uuid } from "uuid";
+import agent from "../api/agent";
+import LoadingComponent from "./LoadingComponent";
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
@@ -15,12 +16,18 @@ function App() {
 
   const [editMode, setEditMode] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+
+  const [submitting, setSubmitting] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get<Activity[]>(
-        "http://localhost:5000/api/activities"
-      );
-      setActivities(response.data);
+      const response = await agent.Activities.list();
+      response.forEach((a) => {
+        a.date = a.date.split("T")[0];
+      });
+      setActivities(response);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -42,20 +49,30 @@ function App() {
     setEditMode(false);
   };
 
-  const handleCreateOrEditActivity = (activity: Activity) => {
-    activity.id
-      ? setActivities([
-          ...activities.filter((a) => a.id !== activity.id),
-          activity,
-        ])
-      : setActivities([...activities, { ...activity, id: uuid() }]);
-    setEditMode(false);
+  const handleCreateOrEditActivity = async (activity: Activity) => {
+    setSubmitting(true);
+    if (activity.id) {
+      await agent.Activities.update(activity);
+      setActivities([
+        ...activities.filter((a) => a.id !== activity.id),
+        activity,
+      ]);
+    } else {
+      activity.id = uuid();
+      await agent.Activities.create(activity);
+    }
     setSelectedActivity(activity);
+    setEditMode(false);
+    setSubmitting(false);
   };
 
   const handleDeleteActivity = (id: string) => {
     setActivities([...activities.filter((a) => a.id !== id)]);
   };
+
+  if (loading) {
+    return <LoadingComponent content="Loading App" />;
+  }
 
   return (
     <>
