@@ -1,25 +1,24 @@
-/* eslint-disable react-refresh/only-export-components */
 import axios, { AxiosResponse } from "axios";
 import { Activity } from "../models/activity";
 
 axios.defaults.baseURL = "http://localhost:5000/api";
 
-const responseBody = <T,>(response: AxiosResponse<T>) => response.data;
+const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
 const requests = {
-  get: async <T,>(url: string) => {
+  get: async <T>(url: string) => {
     const response = await axios.get<T>(url);
     return responseBody(response);
   },
-  post: async <T,>(url: string, body: object) => {
+  post: async <T>(url: string, body: object) => {
     const response = await axios.post<T>(url, body);
     return responseBody(response);
   },
-  put: async <T,>(url: string, body: object) => {
+  put: async <T>(url: string, body: object) => {
     const response = await axios.put<T>(url, body);
     return responseBody(response);
   },
-  delete: async <T,>(url: string) => {
+  delete: async <T>(url: string) => {
     const response = await axios.delete<T>(url);
     return responseBody(response);
   },
