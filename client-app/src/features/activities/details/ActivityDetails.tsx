@@ -1,51 +1,43 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardMeta,
-  CardDescription,
-  Image,
-  Button,
-} from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { useStore } from "../../../app/stores/store";
+import { useParams } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
+import LoadingComponent from "../../../app/layout/LoadingComponent";
+import ActivityDetailedHeader from "./ActivityDetailedHeader";
+import ActivityDetailedInfo from "./ActivityDetailedInfo";
+import ActivityDetailedChat from "./ActivityDetailedChat";
+import ActivityDetailedSidebar from "./ActivityDetailedSidebar";
 
-const ActivityDetails = () => {
+const ActivityDetails = observer(() => {
   const { activityStore } = useStore();
 
   const {
     selectedActivity: activity,
-    openForm,
-    cancelSelectedActivity,
+    loadActivity,
+    loadingInitial,
   } = activityStore;
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (id) loadActivity(id);
+  }, [id, loadActivity]);
+
+  if (loadingInitial || !activity) return <LoadingComponent />;
+
   return (
-    <Card fluid>
-      <Image src={`/assets/categoryImages/${activity!.category}.jpg`} />
-      <CardContent>
-        <CardHeader>{activity!.title}</CardHeader>
-        <CardMeta>
-          <span>{activity!.date}</span>
-        </CardMeta>
-        <CardDescription>{activity!.description}</CardDescription>
-      </CardContent>
-      <Card.Content extra>
-        <Button.Group widths="2">
-          <Button
-            onClick={() => openForm(activity!.id)}
-            basic
-            color="blue"
-            content="Edit"
-          />
-          <Button
-            onClick={cancelSelectedActivity}
-            basic
-            color="grey"
-            content="Cancel"
-          />
-        </Button.Group>
-      </Card.Content>
-    </Card>
+    <Grid>
+      <Grid.Column width={10}>
+        <ActivityDetailedHeader activity={activity} />
+        <ActivityDetailedInfo activity={activity} />
+        <ActivityDetailedChat />
+      </Grid.Column>
+      <Grid.Column width={6}>
+        <ActivityDetailedSidebar />
+      </Grid.Column>
+    </Grid>
   );
-};
+});
 
 export default ActivityDetails;
