@@ -136,3 +136,6 @@
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/MediatR.Contracts.dll
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/AutoMapper.dll
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
