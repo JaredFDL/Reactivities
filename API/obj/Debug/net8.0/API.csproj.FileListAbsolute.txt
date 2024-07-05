@@ -139,3 +139,17 @@
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.dll
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/scorpio/Desktop/Reactivities/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
